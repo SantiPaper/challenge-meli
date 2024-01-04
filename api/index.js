@@ -1,16 +1,13 @@
 import express from "express";
 import axios from "axios";
+import { mapProducts } from "./utils/functions.js";
+import { author } from "./utils/variables.js";
 
 const app = express();
 
 const puerto = 3001;
 
 const baseUrl = "https://api.mercadolibre.com";
-
-const utilsAuthor = {
-  name: "Santiago",
-  lastname: "Vitelli",
-};
 
 app.get("/", async (req, res) => {
   const { q } = req.query;
@@ -24,26 +21,12 @@ app.get("/", async (req, res) => {
     );
 
     res.json({
-      author: utilsAuthor,
+      author,
       categories: categories.path_from_root.map((category) => category.name),
-      items: [
-        data.results.slice(0, 4).map((product) => ({
-          id: product.id,
-          title: product.title,
-          price: {
-            currency: product.currency_id,
-            amount: product.price,
-
-            decimals: product.price.toString().split("."),
-          },
-          picture: product.thumbnail,
-          condition: product.condition,
-          free_shipping: product.shipping.free_shipping,
-        })),
-      ],
+      items: mapProducts(data.results),
     });
   } catch (error) {
-    console.log(error);
+    res.sendStatus(500);
   }
 });
 
