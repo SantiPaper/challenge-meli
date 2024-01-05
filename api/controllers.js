@@ -28,15 +28,13 @@ export const getProducts = async (req, res) => {
   }
 };
 
-export const getProductById = (req, res) => {
+export const getProductById = async (req, res) => {
   const { productId } = req.params;
-
-  Promise.all([
-    axios.get(`${baseUrl}/items/${productId}`),
-    axios.get(`${baseUrl}/items/${productId}/description`),
-  ]).then(async (resArray) => {
-    const infoProduct = resArray[0].data;
-    const descriptionProduct = resArray[1].data;
+  try {
+    const [infoProduct, descriptionProduct] = await Promise.all([
+      axios.get(`${baseUrl}/items/${productId}`),
+      axios.get(`${baseUrl}/items/${productId}/description`),
+    ]);
 
     const { data: categories } = await axios.get(
       `${baseUrl}/categories/${infoProduct.category_id}`
@@ -47,5 +45,8 @@ export const getProductById = (req, res) => {
       item: extractPropertiesFromProduct(infoProduct, descriptionProduct),
       categories: categories.path_from_root.map((category) => category.name),
     });
-  });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
 };
