@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "Proxima nova";
+  src: url("./fonts/proximanova_regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Proxima nova";
+  src: url("./fonts/proximanova_bold.otf");
+  font-weight: 600;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +18,7 @@
 
 html {
   font-size: 10px;
+  font-family: "Proxima nova";
 }
 
 :root {
