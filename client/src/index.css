@@ -19,6 +19,7 @@
 html {
   font-size: 10px;
   font-family: "Proxima nova";
+  background-color: var(--gray-100);
 }
 
 :root {
