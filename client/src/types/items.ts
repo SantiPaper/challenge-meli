@@ -3,7 +3,7 @@ type Author = {
   lastname: string;
 };
 
-interface Item {
+export interface Product {
   id: string;
   title: string;
   price: {
@@ -16,7 +16,7 @@ interface Item {
   free_shipping: boolean;
 }
 
-interface ItemWithDescription extends Item {
+interface ItemWithDescription extends Product {
   description: string;
 }
 
@@ -24,7 +24,7 @@ type Categories = Array<string>;
 
 export type SearchResults = {
   author: Author;
-  items: Array<Item>;
+  items: Array<Product>;
   categories: Categories;
 };
 
