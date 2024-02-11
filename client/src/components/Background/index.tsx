@@ -3,5 +3,9 @@ import { Container } from "../Container";
 import { StyledBackground } from "./style";
 
 export const Background: FC<PropsWithChildren> = ({ children }) => {
-  return <StyledBackground>{children}</StyledBackground>;
+  return (
+    <Container>
+      <StyledBackground>{children}</StyledBackground>;
+    </Container>
+  );
 };
