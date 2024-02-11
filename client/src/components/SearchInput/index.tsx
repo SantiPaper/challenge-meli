@@ -1,20 +1,17 @@
 import { StyledSearchInput } from "./style";
-import { useProductsContext } from "../../hooks/useProductsContext";
 import { useNavigate } from "react-router-dom";
+import { ChangeEvent, useState } from "react";
 
 export const SearchInput = () => {
-  const { state, getSearchString } = useProductsContext();
   const navigate = useNavigate();
+  const [search, setSearch] = useState<string>("");
 
-  const handleChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
-    getSearchString(ev.target.value);
+  const handleChange = (ev: ChangeEvent<HTMLInputElement>) => {
+    setSearch(ev.target.value);
   };
 
-  const handleSubmit = (ev: React.FormEvent<HTMLFormElement>) => {
-    ev.preventDefault();
-    if (state.searchInput) {
-      navigate(`/items?search=${state.searchInput}`);
-    }
+  const handleSubmit = () => {
+    navigate(`/items?search=${search}`);
   };
 
   return (

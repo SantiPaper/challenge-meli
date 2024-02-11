@@ -1,33 +1,36 @@
-import { Background } from "../Background";
 import { StyledResults } from "./style";
 import { useProductsContext } from "../../hooks/useProductsContext";
-import { useEffect } from "react";
+import { useFetch } from "../../hooks/useFetch";
+
+import { useSearchParams } from "react-router-dom";
+import { Background } from "../Background";
+import { ItemProduct } from "../ItemProduct";
 
 export const Results = () => {
-  const { state, getProductsBySearch } = useProductsContext();
-
-  useEffect(() => {
-    fetch(`http://localhost:3001/api/items`)
-      .then((data) => data.json())
-      .then((data) => {
-        getProductsBySearch(data);
-      })
-      .catch((error) => console.error(error));
-  }, []);
-
-  console.log(state);
+  const { state } = useProductsContext();
+  const [params] = useSearchParams();
+  const { loading, error } = useFetch({
+    status: "?q=",
+    payload: params.get("search"),
+  });
 
   return (
     <StyledResults>
-      {state.searchResults.categories ? (
-        <p className="results__categories">{state.searchResults.categories}</p>
+      {error && <p>{error}</p>}
+      {loading ? (
+        <p>Loading component</p>
       ) : (
-        <p>Tiraste cualquiera</p>
+        <>
+          <p className="results__categories">
+            {state.searchResults.categories}
+          </p>
+          <Background>
+            {state.searchResults.items.map((prod) => (
+              <ItemProduct title={prod.title} key={prod.id} />
+            ))}
+          </Background>
+        </>
       )}
-
-      <Background>
-        <h1>Hola gente</h1>
-      </Background>
     </StyledResults>
   );
 };
