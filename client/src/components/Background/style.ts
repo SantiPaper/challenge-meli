@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const StyledBackground = styled.div`
-  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
   flex: 1;
   width: 100%;
-  min-height: 95%;
 `;
