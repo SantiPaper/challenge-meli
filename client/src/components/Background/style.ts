@@ -5,6 +5,7 @@ export const StyledBackground = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: white;
+  padding: var(--spacing-m);
   flex: 1;
   width: 100%;
 `;
