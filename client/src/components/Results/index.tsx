@@ -26,7 +26,13 @@ export const Results = () => {
           </p>
           <Background>
             {state.searchResults.items.map((prod) => (
-              <ItemProduct title={prod.title} key={prod.id} />
+              <ItemProduct
+                key={prod.id}
+                title={prod.title}
+                price={prod.price.amount}
+                shipping={prod.free_shipping}
+                img={prod.picture}
+              />
             ))}
           </Background>
         </>
