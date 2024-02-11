@@ -4,7 +4,7 @@ import { ItemsContext } from "../context";
 export const useProductsContext = () => {
   const value = useContext(ItemsContext);
   if (!value) {
-    throw new Error("useBookContext tiene que usarse dentro del provider");
+    throw new Error("useProductsContext tiene que usarse dentro del provider");
   }
   return value;
 };
