@@ -1,4 +1,4 @@
-type Author = {
+export type Author = {
   name: string;
   lastname: string;
 };
@@ -20,7 +20,7 @@ interface ItemWithDescription extends Product {
   description: string;
 }
 
-type Categories = Array<string>;
+export type Categories = Array<string>;
 
 export type SearchResults = {
   author: Author;

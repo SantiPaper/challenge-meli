@@ -1,16 +1,23 @@
-import { Product } from "./items";
+import { SearchResults } from "./items";
 
 export type Context = {
   state: State;
-  getProductsBySearch: (products: Array<Product>) => void;
+  getProductsBySearch: (searchResults: SearchResults) => void;
+  getSearchString: (query: string) => void;
 };
 
 export type State = {
-  products: [];
+  searchResults: SearchResults;
+  searchInput: string;
 };
 export type Reducer = (state: State, action: Action) => State;
 
-export type Action = {
-  type: "GET_PRODUCTS";
-  payload: Product;
-};
+export type Action =
+  | {
+      type: "GET_PRODUCTS";
+      payload: SearchResults;
+    }
+  | {
+      type: "SEARCH_PRODUCTS";
+      payload: string;
+    };
