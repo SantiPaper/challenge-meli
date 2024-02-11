@@ -15,16 +15,12 @@ export const Provider = ({ children }: PropsWithChildren) => {
     });
   };
 
-  const getSearchString = (query: string) => {
-    dispatch({
-      type: "SEARCH_PRODUCTS",
-      payload: query,
-    });
-  };
-
   return (
     <ItemsContext.Provider
-      value={{ state, getProductsBySearch, getSearchString }}
+      value={{
+        state,
+        getProductsBySearch,
+      }}
     >
       {children}
     </ItemsContext.Provider>
