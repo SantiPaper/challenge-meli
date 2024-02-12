@@ -1,22 +1,30 @@
 import styled from "styled-components";
 
 export const StyledItemProduct = styled.article`
-  display: flex;
+  a {
+    display: flex;
+    color: currentColor;
+    text-decoration: none;
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid var(--gray-100);
+  }
   .product {
     &__img {
-      padding: var(--spacing-m);
+      margin: var(--spacing-m);
       border-radius: var(--radius);
     }
 
     &__info {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      align-items: center;
+      width: 100%;
 
       &__price-container {
         display: flex;
         margin-bottom: var(--spacing-l);
-        gap: 0.5rem;
+        gap: 1.5rem;
         align-items: center;
 
         &__price {
@@ -25,6 +33,12 @@ export const StyledItemProduct = styled.article`
       }
       &__title {
         font-size: var(--font-size-400);
+        font-weight: 400;
+      }
+      &__condition {
+        font-size: var(--font-size-100);
+        margin-left: auto;
+        margin-right: 10rem;
       }
     }
   }
