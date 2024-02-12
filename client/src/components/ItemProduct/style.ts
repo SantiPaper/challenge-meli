@@ -24,7 +24,7 @@ export const StyledItemProduct = styled.article`
       &__price-container {
         display: flex;
         margin-bottom: var(--spacing-l);
-        gap: 1.5rem;
+        gap: var(--spacing-m);
         align-items: center;
 
         &__price {
