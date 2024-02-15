@@ -1,12 +1,12 @@
-import React from "react";
 import { useSearchParams } from "react-router-dom";
 import { useProductsContext } from "../../hooks/useProductsContext";
 import { useFetch } from "../../hooks/useFetch";
 import { Background } from "../Background";
 import { ItemProduct } from "../ItemProduct";
 import { Breadcrumbs } from "../Breadcrumbs";
-import { StyledResults } from "./style";
 import { Loading } from "../Loading";
+import { Container } from "../Container";
+import { ErrorMessage } from "../ErrorMessage";
 
 export const Results = () => {
   const { state } = useProductsContext();
@@ -17,10 +17,8 @@ export const Results = () => {
     payload: params.get("search"),
   });
 
-  console.log(JSON.stringify(error));
-
   return (
-    <StyledResults>
+    <section>
       {loading ? (
         <Loading />
       ) : (
@@ -28,9 +26,9 @@ export const Results = () => {
           {state.searchResults.categories && (
             <Breadcrumbs categories={state.searchResults.categories} />
           )}
-          <Background>
-            {state.searchResults.items ? (
-              state.searchResults.items.map((prod) => {
+          {state.searchResults.items ? (
+            <Background>
+              {state.searchResults.items.map((prod) => {
                 const number = new Intl.NumberFormat("es-AR", {
                   style: "currency",
                   currency: "ARS",
@@ -49,13 +47,15 @@ export const Results = () => {
                     condition={prod.condition}
                   />
                 );
-              })
-            ) : (
-              <h2>{error}</h2>
-            )}
-          </Background>
+              })}
+            </Background>
+          ) : (
+            <Container>
+              <ErrorMessage error={error} />
+            </Container>
+          )}
         </>
       )}
-    </StyledResults>
+    </section>
   );
 };
