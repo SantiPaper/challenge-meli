@@ -27,7 +27,12 @@ export const SearchInput = () => {
         id="search"
         name="search"
       />
-      <button className="search__button" aria-label="Buscar" type="submit">
+      <button
+        className="search__button"
+        aria-label="Buscar"
+        type="submit"
+        disabled={!search}
+      >
         <img width={20} src="/images/search.png" alt="Buscar" />
       </button>
     </StyledSearchInput>

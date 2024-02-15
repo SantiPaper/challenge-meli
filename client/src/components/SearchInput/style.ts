@@ -19,6 +19,10 @@ export const StyledSearchInput = styled.form`
       border-radius: 0 var(--radius) var(--radius) 0;
       border: none;
 
+      &:disabled {
+        background-color: var(--gray-400);
+      }
+
       img {
         vertical-align: middle;
       }
