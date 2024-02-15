@@ -7,13 +7,15 @@ type Props = {
 export const Breadcrumbs = ({ categories }: Props) => {
   return (
     <StyledBreadcrumbs>
-      {categories.map((catergory) => (
-        <li key={catergory} className="item">
-          <a href="#" className="link">
-            {catergory}
-          </a>
-        </li>
-      ))}
+      <ul className="breadcrumbs">
+        {categories.map((catergory) => (
+          <li key={catergory} className="breadcrumbs__item">
+            <a href="#" className="breadcrumbs__item__link">
+              {catergory}
+            </a>
+          </li>
+        ))}
+      </ul>
     </StyledBreadcrumbs>
   );
 };

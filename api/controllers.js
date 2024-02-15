@@ -24,29 +24,39 @@ export const getProducts = async (req, res) => {
       items: mapProducts(data.results),
     });
   } catch (error) {
-    res.sendStatus(500);
+    res.sendStatus(404);
   }
 };
 
 export const getProductById = async (req, res) => {
-  const { productId } = req.params;
   try {
-    const [infoProduct, descriptionProduct] = await Promise.all([
-      axios.get(`${baseUrl}/items/${productId}`),
-      axios.get(`${baseUrl}/items/${productId}/description`),
-    ]);
+    const { productId } = req.params;
 
-    const { data: categories } = await axios.get(
+    const [infoProductResponse, descriptionProductResponse] = await Promise.all(
+      [
+        axios.get(`${baseUrl}/items/${productId}`),
+        axios.get(`${baseUrl}/items/${productId}/description`),
+      ]
+    );
+
+    const infoProduct = infoProductResponse.data;
+    const descriptionProduct = descriptionProductResponse.data;
+
+    const categoriesResponse = await axios.get(
       `${baseUrl}/categories/${infoProduct.category_id}`
+    );
+
+    const categories = categoriesResponse.data.path_from_root.map(
+      (category) => category.name
     );
 
     res.json({
       author,
       item: extractPropertiesFromProduct(infoProduct, descriptionProduct),
-      categories: categories.path_from_root.map((category) => category.name),
+      categories,
     });
   } catch (error) {
-    console.error("Error fetching data:", error);
-    res.status(500).json({ error: "Internal server error" });
+    console.error("Error:", error.message);
+    res.status(500).json({ error: error.message });
   }
 };
