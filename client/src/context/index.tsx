@@ -1,7 +1,7 @@
 import { PropsWithChildren, createContext, useReducer } from "react";
 import { Context } from "../types/context";
 import { initialState, reducer } from "./reducer";
-import { SearchResults } from "../types/items";
+import { ProductDetail, SearchResults } from "../types/items";
 
 export const ItemsContext = createContext<Context | null>(null);
 
@@ -15,11 +15,19 @@ export const Provider = ({ children }: PropsWithChildren) => {
     });
   };
 
+  const getProductById = (product: ProductDetail) => {
+    dispatch({
+      type: "GET_PRODUCT_BY_ID",
+      payload: product,
+    });
+  };
+
   return (
     <ItemsContext.Provider
       value={{
         state,
         getProductsBySearch,
+        getProductById,
       }}
     >
       {children}

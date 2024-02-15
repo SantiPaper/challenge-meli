@@ -1,8 +1,9 @@
 import { Reducer, State } from "../types/context";
-import { SearchResults } from "../types/items";
+import { ProductDetail, SearchResults } from "../types/items";
 
 export const initialState: State = {
   searchResults: {} as SearchResults,
+  product: {} as ProductDetail,
 };
 
 export const reducer: Reducer = (state = initialState, action) => {
@@ -11,6 +12,12 @@ export const reducer: Reducer = (state = initialState, action) => {
       return {
         ...state,
         searchResults: action.payload,
+      };
+    }
+    case "GET_PRODUCT_BY_ID": {
+      return {
+        ...state,
+        product: action.payload,
       };
     }
 
