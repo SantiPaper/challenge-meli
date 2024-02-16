@@ -6,10 +6,10 @@ import { ItemProduct } from "../ItemProduct";
 import { Breadcrumbs } from "../Breadcrumbs";
 import { Loading } from "../Loading";
 import { Container } from "../Container";
-import { ErrorMessage } from "../ErrorMessage";
+import { NotFound } from "../NotFound";
 
 export const Results = () => {
-  const { state } = useProductsContext();
+  const { state, handleFormat } = useProductsContext();
   const [params] = useSearchParams();
 
   const { loading, error } = useFetch({
@@ -29,19 +29,12 @@ export const Results = () => {
           {state.searchResults.items ? (
             <Background>
               {state.searchResults.items.map((prod) => {
-                const number = new Intl.NumberFormat("es-AR", {
-                  style: "currency",
-                  currency: "ARS",
-                  minimumFractionDigits: 0,
-                  maximumFractionDigits: 0,
-                }).format(prod.price.amount);
-
                 return (
                   <ItemProduct
                     key={prod.id}
                     id={prod.id}
                     title={prod.title}
-                    price={number}
+                    price={handleFormat(prod.price.amount)}
                     shipping={prod.free_shipping}
                     img={prod.picture}
                     condition={prod.condition}
@@ -51,7 +44,7 @@ export const Results = () => {
             </Background>
           ) : (
             <Container>
-              <ErrorMessage error={error} />
+              <NotFound error={error} />
             </Container>
           )}
         </>
