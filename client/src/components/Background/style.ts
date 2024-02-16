@@ -8,4 +8,5 @@ export const StyledBackground = styled.div`
   padding: var(--spacing-m);
   flex: 1;
   width: 100%;
+  margin-bottom: var(--spacing-l);
 `;
