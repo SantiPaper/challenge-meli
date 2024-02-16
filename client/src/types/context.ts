@@ -4,6 +4,7 @@ export type Context = {
   state: State;
   getProductsBySearch: (searchResults: SearchResults) => void;
   getProductById: (product: ProductDetail) => void;
+  handleFormat: (price: number) => string;
 };
 
 export type State = {

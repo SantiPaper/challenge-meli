@@ -6,6 +6,15 @@ import { ProductDetail, SearchResults } from "../types/items";
 export const ItemsContext = createContext<Context | null>(null);
 
 export const Provider = ({ children }: PropsWithChildren) => {
+  const handleFormat = (price: number) => {
+    return new Intl.NumberFormat("es-AR", {
+      style: "currency",
+      currency: "ARS",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(price);
+  };
+
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const getProductsBySearch = (searchResults: SearchResults) => {
@@ -28,6 +37,7 @@ export const Provider = ({ children }: PropsWithChildren) => {
         state,
         getProductsBySearch,
         getProductById,
+        handleFormat,
       }}
     >
       {children}
