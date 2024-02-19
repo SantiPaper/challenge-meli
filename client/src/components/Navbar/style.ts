@@ -6,12 +6,22 @@ export const StyledNavbar = styled.header`
   justify-content: center;
   width: 100%;
 
-  .navbar__content {
-    padding: 1rem 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  .navbar {
+    &__content {
+      padding: 1rem 1rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .navbar {
+      &__img {
+        width: 5rem;
+      }
+    }
   }
 `;

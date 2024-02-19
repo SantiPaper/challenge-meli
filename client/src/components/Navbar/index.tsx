@@ -9,7 +9,12 @@ export const Navbar = () => {
       <Container>
         <div className="navbar__content">
           <Link to="/">
-            <img width={70} src="/images/logo_meli.png" alt="Logo" />
+            <img
+              className="navbar__img"
+              width={70}
+              src="/images/logo_meli.png"
+              alt="Logo"
+            />
           </Link>
           <SearchInput />
         </div>

@@ -25,4 +25,12 @@ export const StyledBreadcrumbs = styled.nav`
       }
     }
   }
+  @media screen and (max-width: 800px) {
+    .breadcrumbs {
+      flex-wrap: wrap;
+      &__item {
+        font-size: var(--font-size-100);
+      }
+    }
+  }
 `;

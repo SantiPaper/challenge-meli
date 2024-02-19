@@ -5,7 +5,7 @@ import { StyledBackground } from "./style";
 export const Background: FC<PropsWithChildren> = ({ children }) => {
   return (
     <Container>
-      <StyledBackground>{children}</StyledBackground>;
+      <StyledBackground>{children}</StyledBackground>
     </Container>
   );
 };

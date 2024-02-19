@@ -28,4 +28,12 @@ export const StyledSearchInput = styled.form`
       }
     }
   }
+
+  @media screen and (max-width: 600px) {
+    .search {
+      &__input {
+        font-size: var(--font-size-300);
+      }
+    }
+  }
 `;

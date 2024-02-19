@@ -37,7 +37,9 @@ export const ItemProduct = ({
                 <img src={imgShipping} alt="" width={15} height={15} />
               )}
             </div>
-            <h3 className="product__info__title">{title}</h3>
+            <div>
+              <h3 className="product__info__title">{title}</h3>
+            </div>
           </div>
           <p className="product__info__condition">
             {condition === "new" ? "Nuevo" : "Usado"}

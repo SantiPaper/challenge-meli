@@ -42,4 +42,50 @@ export const StyledItemProduct = styled.article`
       }
     }
   }
+
+  @media screen and (max-width: 900px) {
+    .product {
+      &__img {
+        width: 15rem;
+        height: 15rem;
+      }
+      &__info {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        &__condition {
+          margin-left: 0;
+          margin-right: 0;
+          padding: var(--spacing-m) 0;
+          font-size: var(--font-size-200);
+        }
+        &__price-container {
+          margin: var(--spacing-m) 0;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .product {
+      &__img {
+        width: 12rem;
+        height: 12rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .product {
+      &__info {
+        &__title {
+          font-size: var(--font-size-200);
+        }
+        &__price-container {
+          &__price {
+            font-size: var(--font-size-300);
+          }
+        }
+      }
+    }
+  }
 `;

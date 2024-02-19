@@ -7,6 +7,7 @@ import { Breadcrumbs } from "../Breadcrumbs";
 import { Loading } from "../Loading";
 import { Container } from "../Container";
 import { NotFound } from "../NotFound";
+import { StyledResults } from "./style";
 
 export const Results = () => {
   const { state, handleFormat } = useProductsContext();
@@ -18,7 +19,7 @@ export const Results = () => {
   });
 
   return (
-    <section>
+    <StyledResults>
       {loading ? (
         <Loading />
       ) : (
@@ -49,6 +50,6 @@ export const Results = () => {
           )}
         </>
       )}
-    </section>
+    </StyledResults>
   );
 };

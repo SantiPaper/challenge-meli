@@ -14,7 +14,6 @@ export const useFetch = ({ status, payload }: Props) => {
 
   useEffect(() => {
     setLoading(true);
-    console.log(`http://localhost:3001/api/items${status}${payload}`);
 
     fetch(`http://localhost:3001/api/items${status}${payload}`)
       .then((response) => {
