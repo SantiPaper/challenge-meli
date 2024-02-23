@@ -6,6 +6,6 @@ export const StyledErrorMessage = styled.div`
   margin-top: 8rem;
 
   .text {
-    font-size: var(--font-size-500);
+    font-size: var(--font-size-600);
   }
 `;
