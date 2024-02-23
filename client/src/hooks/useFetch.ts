@@ -19,6 +19,8 @@ export const useFetch = ({ status, payload }: Props) => {
       .then((response) => {
         if (response.status === 404) {
           throw new Error(`Producto no encontrado`);
+        } else if (response.status === 500) {
+          throw new Error("Error en el servidor");
         }
         return response.json();
       })
