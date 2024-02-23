@@ -8,7 +8,7 @@ export const Breadcrumbs = ({ categories }: Props) => {
   return (
     <StyledBreadcrumbs>
       <ul className="breadcrumbs">
-        {categories.map((catergory) => (
+        {categories?.map((catergory) => (
           <li key={catergory} className="breadcrumbs__item">
             <a href="#" className="breadcrumbs__item__link">
               {catergory}
