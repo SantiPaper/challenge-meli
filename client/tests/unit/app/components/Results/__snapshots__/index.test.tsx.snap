@@ -1,0 +1,37 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Componente Results > Rendering el componente 1`] = `
+<div>
+  <section
+    class="sc-gLLuof dOuqnz"
+  >
+    <section
+      class="sc-eDLKkx iQSGzz"
+    >
+      <h2
+        class="text"
+      >
+        Cargando...
+      </h2>
+    </section>
+  </section>
+</div>
+`;
+
+exports[`Componente results > Rendering el componente 1`] = `
+<div>
+  <section
+    class="sc-gLLuof dOuqnz"
+  >
+    <section
+      class="sc-eDLKkx iQSGzz"
+    >
+      <h2
+        class="text"
+      >
+        Cargando...
+      </h2>
+    </section>
+  </section>
+</div>
+`;

@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Home > Renderiza el componente 1`] = `
+<div>
+  <div
+    class="sc-beySPh cQDbwC"
+  >
+    <h1
+      class="hero"
+    >
+      Aun no realizaste tu búsqueda, te alentamos a que lo hagas!
+    </h1>
+  </div>
+</div>
+`;

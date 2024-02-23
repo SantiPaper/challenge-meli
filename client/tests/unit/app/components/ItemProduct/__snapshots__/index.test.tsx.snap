@@ -1,0 +1,56 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ItemProduct > Renderiza bien 1`] = `
+<div>
+  <article
+    class="sc-beySPh duuIyI"
+    data-testid="Producto de prueba"
+  >
+    <a
+      href="/items/1"
+    >
+      <img
+        alt="Producto de prueba"
+        class="product__img"
+        height="180"
+        src="imagen.jpg"
+        width="180"
+      />
+      <div
+        class="product__info"
+      >
+        <div>
+          <div
+            class="product__info__price-container"
+          >
+            <p
+              class="product__info__price-container__price"
+            >
+              $100
+            </p>
+            <img
+              alt=""
+              height="15"
+              src="/public/images/shipping.png"
+              width="15"
+            />
+          </div>
+          <div>
+            <h3
+              class="product__info__title"
+            >
+              Producto de prueba
+            </h3>
+          </div>
+        </div>
+        <p
+          class="product__info__condition"
+          data-testid="condition-text"
+        >
+          Nuevo
+        </p>
+      </div>
+    </a>
+  </article>
+</div>
+`;

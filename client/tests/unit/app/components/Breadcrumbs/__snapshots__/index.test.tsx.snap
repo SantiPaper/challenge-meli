@@ -1,0 +1,44 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Breadcrumbs > Renderiza breadcrumbs 1`] = `
+<div>
+  <nav
+    class="sc-beySPh gQqSYr"
+  >
+    <ul
+      class="breadcrumbs"
+    >
+      <li
+        class="breadcrumbs__item"
+      >
+        <a
+          class="breadcrumbs__item__link"
+          href="#"
+        >
+          Category 1
+        </a>
+      </li>
+      <li
+        class="breadcrumbs__item"
+      >
+        <a
+          class="breadcrumbs__item__link"
+          href="#"
+        >
+          Category 2
+        </a>
+      </li>
+      <li
+        class="breadcrumbs__item"
+      >
+        <a
+          class="breadcrumbs__item__link"
+          href="#"
+        >
+          Category 3
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

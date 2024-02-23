@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Background > Renderizado inicial con contenido 1`] = `
+<div>
+  <div
+    class="sc-beySPh gVYoAi"
+  >
+    <div>
+      Contenido de prueba
+    </div>
+  </div>
+</div>
+`;

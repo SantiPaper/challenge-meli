@@ -1,0 +1,57 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Navbar > Renderiza navbar 1`] = `
+<div>
+  <header
+    class="sc-dmyCSP bligWw"
+  >
+    <div
+      class="sc-beySPh gVYoAi"
+    >
+      <div
+        class="navbar__content"
+      >
+        <a
+          href="/"
+        >
+          <img
+            alt="Logo"
+            class="navbar__img"
+            src="/images/logo_meli.png"
+            width="70"
+          />
+        </a>
+        <form
+          class="sc-guDLey juwNII"
+          data-testid="form"
+        >
+          <label
+            class="sr-only"
+            for="search"
+          >
+            Buscar productos
+          </label>
+          <input
+            class="search__input"
+            id="search"
+            name="search"
+            placeholder="Nunca dejes de buscar"
+            type="search"
+          />
+          <button
+            aria-label="Buscar"
+            class="search__button"
+            type="submit"
+          >
+            <img
+              alt="Buscar"
+              src="/images/search.png"
+              width="20"
+            />
+          </button>
+        </form>
+      </div>
+    </div>
+  </header>
+</div>
+`;
