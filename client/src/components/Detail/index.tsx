@@ -21,8 +21,6 @@ export const Detail = () => {
     payload: location.pathname.split("/")[2],
   });
 
-  console.log(product);
-
   return (
     <StyledDetail>
       {loading ? (
