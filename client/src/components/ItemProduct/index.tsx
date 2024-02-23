@@ -19,7 +19,7 @@ export const ItemProduct = ({
   condition,
 }: Props) => {
   return (
-    <StyledItemProduct key={id}>
+    <StyledItemProduct key={id} data-testid={title}>
       <Link to={`/items/${id}`}>
         <img
           className="product__img"
@@ -41,7 +41,7 @@ export const ItemProduct = ({
               <h3 className="product__info__title">{title}</h3>
             </div>
           </div>
-          <p className="product__info__condition">
+          <p className="product__info__condition" data-testid="condition-text">
             {condition === "new" ? "Nuevo" : "Usado"}
           </p>
         </div>
