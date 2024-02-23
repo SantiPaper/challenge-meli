@@ -1,56 +1,48 @@
-export const arrayProd = [
+export const mockProds = [
   {
-    id: "MLA909922852",
-    title: "Apple iPhone 11 (128 Gb) - Negro",
+    id: "1",
+    title: "Producto Genérico 1",
     price: {
       currency: "ARS",
-      amount: 177800,
+      amount: 100,
       decimals: 0,
     },
-    picture: "http://http2.mlstatic.com/D_865864-MLA46114990464_052021-I.jpg",
-    condition: "new",
-    free_shipping: true,
-    address: "Capital Federal",
+    picture: "https://via.placeholder.com/150",
+    category: "Categoría Genérica 1",
   },
   {
-    id: "MLA929556944",
-    title: "Macbook Air (m1, 2020, 256 Gb De Ssd, Macos X 10.14) - Space Gray",
+    id: "2",
+    title: "Producto Genérico 2",
     price: {
       currency: "ARS",
-      amount: 181683,
+      amount: 200,
       decimals: 0,
     },
-    picture: "http://http2.mlstatic.com/D_801112-MLA46516512347_062021-I.jpg",
-    condition: "new",
-    free_shipping: true,
-    address: "Capital Federal",
+    picture: "https://via.placeholder.com/150",
+    category: "Categoría Genérica 2",
   },
   {
-    id: "MLA930057125",
-    title: " iPhone 7 32 Gb Negro Mate",
+    id: "3",
+    title: "Producto Genérico 3",
     price: {
       currency: "ARS",
-      amount: 66000,
+      amount: 150,
       decimals: 0,
     },
-    picture: "http://http2.mlstatic.com/D_942036-MLA31003118587_062019-I.jpg",
-    condition: "new",
-    free_shipping: true,
-    address: "Buenos Aires",
+    picture: "https://via.placeholder.com/150",
+    category: "Categoría Genérica 1",
   },
   {
-    id: "MLA913166917",
-    title: "Apple iPad Mini De 7.9  Wi-fi  64gb Gris Espacial (5ª Generación)",
+    id: "4",
+    title: "Producto Genérico 4",
     price: {
       currency: "ARS",
-      amount: 72999,
+      amount: 300,
       decimals: 0,
     },
-    picture: "http://http2.mlstatic.com/D_791719-MLA46399277951_062021-I.jpg",
-    condition: "new",
-    free_shipping: true,
-    address: "Capital Federal",
+    picture: "https://via.placeholder.com/150",
+    category: "Categoría Genérica 3",
   },
 ];
 
-export const ArrCategories = ["Category 1", "Category 2", "Category 3"];
+export const mockCategories = ["Category 1", "Category 2", "Category 3"];

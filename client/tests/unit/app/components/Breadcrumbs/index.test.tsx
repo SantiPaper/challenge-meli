@@ -1,17 +1,17 @@
 import { render, screen } from "@testing-library/react";
 import { Breadcrumbs } from "../../../../../src/components/Breadcrumbs";
-import { ArrCategories } from "../Results/__mocks__";
+import { mockCategories } from "../Results/__mocks__";
 import userEvent from "@testing-library/user-event";
 
 beforeEach(() => {});
 
 describe("Breadcrumbs", () => {
   test("Renderiza breadcrumbs", () => {
-    const { container } = render(<Breadcrumbs categories={ArrCategories} />);
+    const { container } = render(<Breadcrumbs categories={mockCategories} />);
     expect(container).toMatchSnapshot();
   });
   test("Se puede navegar entre breadcrumbs", async () => {
-    render(<Breadcrumbs categories={ArrCategories} />);
+    render(<Breadcrumbs categories={mockCategories} />);
     const breadCrumbList = screen.getAllByRole("link");
     const mockFn = vi.fn();
     breadCrumbList[0].onclick = mockFn;
