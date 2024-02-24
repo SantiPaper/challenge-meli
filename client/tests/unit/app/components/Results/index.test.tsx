@@ -2,6 +2,8 @@ import { render, screen } from "@testing-library/react";
 import { Results } from "../../../../../src/components/Results";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "../../../../../src/context";
+import { server } from "../../../msw";
+import { HttpResponse, http } from "msw";
 
 describe("Componente Results", () => {
   test("Renderiza el componente", () => {
@@ -35,14 +37,22 @@ describe("Componente Results", () => {
     const articles = screen.getAllByRole("article");
     expect(articles).toHaveLength(4);
   });
-});
+  test("debería manejar un error correctamente", async () => {
+    server.use(
+      http.get("http://localhost:3001/api/items", () => {
+        return HttpResponse.error();
+      })
+    );
 
-// window.fetch = vi.fn();
-/* vi.spyOn(window, "fetch").mockImplementation(() => {
-  return Promise.resolve({
-    json: () => Promise.resolve(mockProds),
+    render(
+      <Provider>
+        <BrowserRouter>
+          <Results />
+        </BrowserRouter>
+      </Provider>
+    );
+
+    const error = await screen.findByAltText("error_img");
+    expect(error).toBeVisible();
   });
-}); */
-/* vi.spyOn(window, "fetch").mockResolvedValue({
-  json: () => Promise.resolve(mockProds),
-}); */
+});
