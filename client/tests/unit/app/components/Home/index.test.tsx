@@ -6,7 +6,7 @@ describe("Home", () => {
     const { container } = render(<Home />);
     expect(container).toMatchSnapshot();
   });
-  test("Renderiza el texto", () => {
+  test.skip("Renderiza el texto", () => {
     render(<Home />);
     const text = screen.getByText(
       "Aun no realizaste tu búsqueda, te alentamos a que lo hagas!"

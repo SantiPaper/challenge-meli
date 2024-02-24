@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Breadcrumbs } from "../../../../../src/components/Breadcrumbs";
-import { mockCategories } from "../Results/__mocks__";
+import { mockCategories } from "../Results/mocks";
 import userEvent from "@testing-library/user-event";
 
 beforeEach(() => {});
