@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Loading component > Renderiza loading 1`] = `
+<div>
+  <section
+    class="sc-beySPh iCJXa-D"
+  >
+    <h2
+      class="text"
+    >
+      Cargando...
+    </h2>
+  </section>
+</div>
+`;

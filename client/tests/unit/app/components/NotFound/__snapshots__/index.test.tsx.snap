@@ -1,0 +1,42 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Not found component > Renderiza el componente 1`] = `
+<div>
+  <div
+    class="sc-beySPh iaMZXf"
+  >
+    <img
+      alt="error_img"
+      class="img"
+      src="/public/images/1178479.png"
+      width="80"
+    />
+    <div
+      class="error"
+    >
+      <h2
+        class="error__text"
+      >
+        Producto no encontrado
+      </h2>
+      <ul>
+        <li
+          class="error__help-item"
+        >
+          Revisa la ortografía de la palabra.
+        </li>
+        <li
+          class="error__help-item"
+        >
+          Utiliza palabras más genéricas o menos palabras.
+        </li>
+        <li
+          class="error__help-item"
+        >
+          Utiliza palabras más genéricas o menos palabras.
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

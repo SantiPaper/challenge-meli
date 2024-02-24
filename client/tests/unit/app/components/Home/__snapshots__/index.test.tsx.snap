@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Home > Renderiza el componente 1`] = `
+<div>
+  <div
+    class="sc-beySPh kkhdWA"
+  >
+    <h1
+      class="hero"
+    >
+      ¡Bienvenido a Mercado Libre!
+    </h1>
+    <p
+      class="text"
+    >
+      Explora un mundo de posibilidades con nuestro buscador de productos. Desde tecnología de última generación hasta moda vanguardista, aquí encontrarás todo lo que necesitas y más.
+    </p>
+  </div>
+</div>
+`;
