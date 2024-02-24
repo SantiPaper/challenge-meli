@@ -8,7 +8,7 @@ type Props = {
 export const NotFound = ({ error }: Props) => {
   return (
     <StyledNotFound>
-      <img className="img" src={search} alt="" width={80} />
+      <img className="img" src={search} alt="error_img" width={80} />
       <div className="error">
         <h2 className="error__text">{error}</h2>
         <ul>

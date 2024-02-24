@@ -11,6 +11,7 @@ import { StyledResults } from "./style";
 
 export const Results = () => {
   const { state, handleFormat } = useProductsContext();
+
   const [params] = useSearchParams();
 
   const { loading, error } = useFetch({
