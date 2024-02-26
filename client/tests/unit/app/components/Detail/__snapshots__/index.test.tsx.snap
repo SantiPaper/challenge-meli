@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Detail component > Renderiza el componente 1`] = `
+<div>
+  <section
+    class="sc-eDLKkx bnUhET"
+  >
+    <section
+      class="sc-guDLey enXtiU"
+    >
+      <h2
+        class="text"
+      >
+        Cargando...
+      </h2>
+    </section>
+  </section>
+</div>
+`;
