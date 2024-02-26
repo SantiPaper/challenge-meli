@@ -37,7 +37,7 @@ describe("Componente Results", () => {
     const articles = screen.getAllByRole("article");
     expect(articles).toHaveLength(4);
   });
-  test("debería manejar un error correctamente", async () => {
+  test("Debería manejar un error correctamente", async () => {
     server.use(
       http.get("http://localhost:3001/api/items", () => {
         return HttpResponse.json(
