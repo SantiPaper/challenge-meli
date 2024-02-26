@@ -40,7 +40,12 @@ describe("Componente Results", () => {
   test("debería manejar un error correctamente", async () => {
     server.use(
       http.get("http://localhost:3001/api/items", () => {
-        return HttpResponse.error();
+        return HttpResponse.json(
+          {},
+          {
+            status: 404,
+          }
+        );
       })
     );
 
